@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Organisation:</strong>
+  <%= @stand.organisation %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stand.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @stand.address %>
+</p>
+
+<p>
+  <strong>Postalcode:</strong>
+  <%= @stand.postalcode %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @stand.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @stand.latitude %>
+</p>
+
+<%= link_to 'Edit', edit_stand_path(@stand) %> |
+<%= link_to 'Back', stands_path %>

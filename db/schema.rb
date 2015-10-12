@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151007165142) do
+ActiveRecord::Schema.define(version: 20151012174144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "organisations", force: :cascade do |t|
+    t.string   "email"
+    t.string   "password"
+    t.string   "password_confirmation"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -23,4 +31,18 @@ ActiveRecord::Schema.define(version: 20151007165142) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "stands", force: :cascade do |t|
+    t.integer  "organisation_id"
+    t.string   "name"
+    t.string   "address"
+    t.string   "postalcode"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "stands", ["organisation_id"], name: "index_stands_on_organisation_id", using: :btree
+
+  add_foreign_key "stands", "organisations"
 end

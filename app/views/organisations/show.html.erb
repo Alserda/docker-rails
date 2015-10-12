@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @organisation.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @organisation.password %>
+</p>
+
+<p>
+  <strong>Password confirmation:</strong>
+  <%= @organisation.password_confirmation %>
+</p>
+
+<%= link_to 'Edit', edit_organisation_path(@organisation) %> |
+<%= link_to 'Back', organisations_path %>
