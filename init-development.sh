@@ -1,6 +1,6 @@
 #!/bin/bash
-docker-compose --file docker-compose-development.yml build \
-&& docker-compose --file docker-compose-development.yml up -d \
+docker-compose build \
+&& docker-compose up -d \
 && echo "Waiting." \
 && sleep 3 \
 && echo "Waiting.." \
@@ -8,6 +8,6 @@ docker-compose --file docker-compose-development.yml build \
 && echo "Waiting..." \
 && sleep 3 \
 && echo "Waiting....\n" \
-&& docker-compose --file docker-compose-development.yml run app rake db:create \
+&& docker-compose run app rake db:create \
 && sleep 3 \
-&& docker-compose --file docker-compose-development.yml run app rake db:migrate
+&& docker-compose run app rake db:migrate

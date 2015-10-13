@@ -1,5 +1,4 @@
 app:
-  dockerfile: Dockerfile.development
   build: .
   volumes:
     - .:/app
@@ -8,4 +7,5 @@ app:
   links:
     - postgres
 postgres:
+  dockerfile: Dockerfile.postgres
   image: postgres:9.4
